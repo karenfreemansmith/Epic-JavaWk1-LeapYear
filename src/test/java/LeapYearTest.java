@@ -8,4 +8,22 @@ public class LeapYearTest {
     LeapYear leapYear = new LeapYear();
     assertEquals(true, leapYear.isLeapYear(2012));
   }
+
+  @Test
+  public void isLeapYear_forNumbesNotDivisibleByFour_false() {
+    LeapYear leapYear = new LeapYear();
+    assertEquals(false, leapYear.isLeapYear(1999));
+  }
+
+  @Test
+  public void isLeapYear_forMuliplesOfOneHundred_false() {
+    LeapYear leapYear = new LeapYear();
+    assertEquals(false, leapYear.isLeapYear(1900));
+  }
+
+  @Test
+  public void isLeapYear_forMultiplesOfFourHudred_true() {
+    LeapYear leapYear = new LeapYear();
+    assertEquals(true, leapYear.isLeapYear(2000));
+  }
 }
